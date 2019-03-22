@@ -48,11 +48,11 @@ var  myPieChart;
 var chartDrawn = false;
 var iqArray = [];
 var labels = [
-  'Linguistic',
+  'Verbal-Linguistic',
   'Logical-Mathematical',
   'Musical',
   'Bodily-Kinesthetic',
-  'Spatial',
+  'Visual-Spatial',
   'Interpersonal',
   'Intrapersonal',
 ];
@@ -172,6 +172,52 @@ function showAnswers() {
   testanswer.appendChild(answerFalse);
 }
 
+// wordy ideas for assessing highest areas
+
+// var highest = [];
+
+// function highestType() {
+//   if (linguistCount >= logicCount && linguistCount >= musicalCount && linguistCount >= bodilyCount && linguistCount >= spatialCount && linguistCount >= interCount && linguistCount >= intraCount) {
+//     console.log(YESLINGUIST);
+//   } else {
+//     console.log(NOLINGUIST);
+//   }
+// }
+
+// function highestType() {
+//   if (linguistCount === 5) {
+//     highest.push("linguistic intelligence");
+//   }
+//   if (logicCount === 5) {
+//     highest.push("logical/mathematical intelligence");
+//   }
+//   if (musicalCount === 5) {
+//     highest.push("musical intelligence");
+//   }
+//   if (bodilyCount === 5) {
+//     highest.push("bodily/kinesthetic intelligence");
+//   }  
+//   if (spatialCount === 5) {
+//     highest.push("visual/spatial intelligence");
+//   }  
+//   if (interCount === 5) {
+//     highest.push("interpersonal intelligence");
+//   } 
+//   if (intraCount === 5) {
+//     highest.push("intrapersonal intelligence");
+//   }
+
+//   if 
+// }
+
+// function highestType () {
+//   for (var i = 0; i < iqArray.length; i++)
+//     // check if array contains 5 with .includes
+//     if iqArray.includes(5);
+//     // if array contains 5, .indexOf the positions that contain 5
+//     var type = iqArray.indexOf(5)
+//     }
+// }
 
 // accept answers
 // create listener for each true and false
@@ -219,6 +265,7 @@ function handleTrue(event) {
   } else {
     console.log('DONE');
     showMeResults();
+
   }
 }
 
@@ -318,3 +365,5 @@ function createChart() {
   // change the boolean for our chart
   chartDrawn = true;
 }
+
+// highestType();
