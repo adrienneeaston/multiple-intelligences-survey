@@ -8,6 +8,7 @@ let answerTrue = document.createElement('li');
 let answerFalse = document.createElement('li');
 let question = document.createElement('p');
 let intelReport = document.getElementById('survey-results');
+// let button = document.getElementById('reset')
 
 let testQuestions = [];
 let iqArray = [];
@@ -32,7 +33,6 @@ let IqType = function (qvalue, category, index, filepath) {
   this.category = category;
   this.index = index;
   this.filepath = filepath;
-
   testQuestions.push(this);
 };
 
@@ -137,7 +137,7 @@ function checkProgress() {
   if (currentQuestion < testQuestions.length) {
     runTest();
   } else {
-    showMeResults();
+    showResults();
   }
 }
 
@@ -184,6 +184,10 @@ function findHighest(arr) {
   let bestList = arr.filter(obj => obj.count === largest); 
   return bestList.map(obj => obj.category).join(', ');
 };
+
+
+
+
 
 function declareStrengths(label) {
   intelReport.innerHTML = '';
@@ -278,22 +282,37 @@ function compileTestData() {
   localStorage.setItem('scores', JSON.stringify(iqArray));
 }
 
-function showMeResults() {
+function checkLocalStorage() {
+  if(localStorage.getItem('scores') !== null) {
+    hideForm();
+    let iqArray = JSON.parse(localStorage.getItem('scores'));
+    renderResults(iqArray);
+  } else {
+    (userForm.addEventListener('submit', handleForm));
+  }
+}
+
+function showResults() {
   compileTestData();
   hideTest();
   renderResults(iqArray);
 }
 
-function checkLocalStorage() {
-  console.log(localStorage.getItem('scores'));
-  if(localStorage.getItem('scores') !== null) {
-    hideForm();
-    let iqArray = JSON.parse(localStorage.getItem('scores'));
-    console.log('storeddata', iqArray);
-    renderResults(iqArray);
-  } else {
-    (userForm.addEventListener('submit', handleForm));
-  }
+function createReset() {
+  let body = document.getElementsByTagName("body")[0];
+  let chart = document.getElementsByTagName('canvas')[0];
+  var btn = document.createElement("reset");
+  btn.innerHTML = "Reset Test!";  
+  btn.setAttribute("type", "click"); 
+  btn.setAttribute("id", "reset");
+  body.insertBefore(btn, chart);
+  btn.addEventListener('click', handleReset);
+}
+
+function handleReset() {
+  console.log("reset");
+  localStorage.clear();
+  location.reload();
 }
 
 function renderResults(arr) {
@@ -301,6 +320,7 @@ function renderResults(arr) {
   declareStrengths(label);
   createChart(arr);
   showMeaning();
+  createReset();
 }
 
 checkLocalStorage();
