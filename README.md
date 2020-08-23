@@ -14,12 +14,9 @@ App to evaluate 7 types of intelligence, for use in schools
 - Print friendly page
 - Hyperlinks for each part of the pie chart linking to the area of intelligence on decsriptions page.
 - Button linking to more formal results page. 
-- Persistence of info.
+- Data base for subjects
 
 ### To do
 - find better color contrast
-- update bio photo
-- render iq types at bottom of results page
-- put event listeners in a function
 - create json file for questions?
-- improve naming for surveytop, mid, bottom
+- button to retake the test
