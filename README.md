@@ -1,18 +1,29 @@
-# multiple-intelligences-survey
-*Code 201 Group Final Project: App to evaluate 7 types of intelligence, for initial use in schools*
-#### GO TEAM RAINBOW UNICORNS!!!
+# multiple-intelligeneces-survey
 
-* YOU are a creative coding professional. 
-* You are going to make awesome things.
-* Confide in your teammates and your ducks. *_WE_* should be the ducks! 
+## Multiple Intelligences Survey
 
+### Author: Adrienne Easton, Aileen Murphy, Brandyn Vay, Haley Archer
 
+### Links and Resources
+* [Deployed site](https://determined-meitner-1b9a23.netlify.com)
 
-###### Quack!
+### Skills Used
+* HTML
+* CSS
+* JavaScript
+* Chart.js
 
-##### Quack!
+### Description
+A website that leads the user through a quiz assessing their strengths via Howard Gardner’s Theory of Multiple Intelligences. The app provides education, automated scoring, and a color coded graph of the results. The app is actively being used in field in Seattle Public Schools and is under continued development by Adrienne Easton for improved user experience and accessibility.
 
-#### Quack!
+### Future possible features
+* database storage of adminstration and user
+* option for user to click to hear audio recording of each question
+* connection to more resources and educational materials
 
-### Quack!
+### Setup
+
+#### Running the app
+* `live-server`
+
 
