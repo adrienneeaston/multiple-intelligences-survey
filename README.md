@@ -14,7 +14,7 @@
 * Chart.js
 
 ### Description
-A website that leads the user through a quiz assessing their strengths via Howard Gardner’s Theory of Multiple Intelligences. The app provides education, automated scoring, and a color coded graph of the results. The app is actively being used in field in Seattle Public Schools and is under continued development by Adrienne Easton for improved user experience and accessibility.
+A website that leads the user through a quiz assessing their strengths via Howard Gardner’s Theory of Multiple Intelligences. The app provides education, automated scoring, and a color coded graph of the results. The app is actively being used in field in Seattle Public Schools and is under continued development by team member Adrienne Easton for improved user experience and accessibility.
 
 ### User Stories
 * As a developer I want to create an application that teachers, counselors, psychologists, and anyone else interested in learning can have guidance for individual strengths and weaknesses.
@@ -31,10 +31,18 @@ A website that leads the user through a quiz assessing their strengths via Howar
 * database storage of user info and results
 * option for user to click to hear audio recording of each question
 * connection to more resources and educational materials
+* Progress bar across top
+* Email link  of results to self
+* Print friendly page
+* Hyperlinks for each part of the pie chart linking to the area of intelligence on decsriptions page
+* Button linking to more formal results page 
 
-### Setup
+### To do
+* create json file for questions?
+* check and improve responsiveness
+* resize test page so easy to see everything at once
+* prompt - are you sure you want to delete current results
+* have test instructions on each page
 
 #### Running the app
 * `live-server`
-
-

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multiple Intelligences Survey</title>
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/survey.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,600');
+  </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400i');
+  </style>
+</head>
+
+<body>
+  <header>
+    <img class="left" src="img/multilogooil.png" alt="rainbowed text saying 'multiple intelligences'">
+    <h3 id="quote"><em>“It’s not how smart you are that matters, what really counts is how are you smart”. </em> – Howard Gardner</h3>
+    
+    <nav>
+      <ul>
+        <li><a href="index.html">Main</a></li>
+        <li><a href="iqtypes.html">Intelligence Types</a></li>
+        <li><a href="survey.html">The Survey</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="intro" id="input"> 
+    <h2>Instructions:</h2>
+
+    <p>This quiz will help you identify your areas of strongest intelligence. Read each statement. If it expresses some characteristic of yours and sounds true for the most part, click on “T” for true. If it doesn’t, choose an “F” for false.</p>
+
+    <form id="userform">
+      <fieldset>
+        <legend>Please complete the following:</legend>
+        <label for="firstname">First Name *</label>
+        <input id="firstname" name="firstname" type="text" required>
+        <label for="lastname">Last Name *</label>
+        <input id="lastname" name="lastname" type="text" required>
+        <label for="birthdate">Birthdate</label>
+        <input id="birthdate" name="birthdate" type="text">
+        <label for="date">Today's Date</label>
+        <input id="date" name="date" type="text">
+        <button type="submit">Begin your IQ journey!</button>
+      </fieldset>
+    </form>
+  </section>
+
+  <section id="survey-progress">
+    <h2 id="qtitle"></h2>
+    <div id="qaudio"></div>
+  </section>
+
+  <section id="survey-question">
+  </section>
+
+  <section id="survey-answers">
+    <ul class="testanswer" id="testanswer">
+    </ul>
+  </section>
+
+  <section id="survey-results">
+  </section>
+
+  <canvas id="myChart" width="400" height="400"></canvas>
+
+  <section id="survey-explained">
+  </section>
+
+  <footer>
+    <p>&copy; copyright 2019</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+  <script src="js/test.js"></script>
+</body>
+</html>

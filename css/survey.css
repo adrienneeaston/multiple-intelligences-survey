@@ -1,0 +1,111 @@
+#question {
+  margin: 5px auto;
+  width: 960px;
+  height: 300px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 300px;
+  font-size: 20px;
+  color: #fff;
+  background-color: rgba(89, 99, 232, 0.85);
+}
+.testanswer li {
+  float: left;
+}
+
+#true {
+  width:480px;
+  height:300px;
+  vertical-align: middle;
+  line-height: 300px;
+  background-color: rgb(105, 126, 127);
+  color: #fff;
+  text-align: center;
+  font-size: 100px;
+}
+
+#true:hover {
+  background-color: #85FCFF;
+  color: #5A6C6C;
+}
+
+#false {
+  width: 480px;
+  height: 300px;
+  vertical-align: middle;
+  line-height: 300px;
+  background-color: rgb(105, 126, 127);
+  color: #fff;
+  text-align: center;
+  font-size: 100px;
+}
+
+#false:hover {
+  background-color: #85FCFF;
+  color: #5A6C6C;
+}
+
+#survey-answers {
+  margin: 5px auto;
+  width: 960px;
+}
+
+/* forms */
+form {
+  text-align: center;
+  max-width: 275px;
+  border: 5px solid #5A6C6C;
+  padding: 10px;
+  margin: 20px auto;
+}
+
+legend {
+  margin-bottom: 10px;
+  font-size: large;
+}
+
+label {
+	float: left;
+	text-align: left;
+	margin-left: 15px;
+	width: 170px;
+}
+
+input {
+  margin: 2px;
+  width: 150px;
+}
+
+input:focus {
+	border: 2px solid #70FFC8;
+}
+
+form button {
+  font-size: 14px;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+  margin-top: 8px;
+  text-transform: capitalize;
+  border-radius: 3px;
+  background: #437D7F ;
+  color: #fff;
+  padding: 10px 5px;
+  transition: 350ms all;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #85FCFF;
+  color: #3e4b4b;
+}
+
+#redo {
+  color: red;
+}
+
+#survey-results h2, #qtitle {
+  line-height: 30px;
+  margin: 50px auto;
+}
+
+
