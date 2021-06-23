@@ -18,6 +18,8 @@
   "homepage": "https://github.com/adrienneeaston/multiple-intelligences-survey#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "nodemon": "^2.0.7"
+    "mongoose": "^5.12.14",
+    "nodemon": "^2.0.7",
+    "pg": "^8.6.0"
   }
 }
