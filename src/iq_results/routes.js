@@ -4,7 +4,8 @@ const controller = require('./controller');
 const router = Router();
 
 router.get('/', controller.getIqResults);
-router.get("/:iq_results_id", controller.getIqResultsById);
-router.post("/", comtroller.addIqResults);
+router.post('/', controller.addIqResults);
+router.get('/:iq_results_id', controller.getIqResultsById);
+router.delete("/:iq_results_id", controller.deleteIqResults);
 
 module.exports = router;
