@@ -42,14 +42,33 @@ const deleteIqResults = (req, res) => {
 
     pool.query(queries.deleteIqResults, [id], (error, results) => {
       if (error) throw error;
-      res.status(200).send("Iq results removed successfully.");
+      res.status(200).send("IQ results removed successfully.");
     });
   });
 };
+
+const updateIqResults = (req, res) => {
+  const id = parseInt(req.params.iq_results_id);
+  const { firstname } = req.body;
+
+  pool.query(queries.getIqResultsById, [id], (error, results) => {
+    const noIqResultsFound = !results.rows.length;
+    if (noIqResultsFound) {
+      res.send("IQ results do not exist in the database.");
+    }
+
+    pool.query(queries.updateIqResults, [firstname, id], (error, results) => {
+      console.log(error);
+      if (error) throw error;
+      res.status(200).send("IQ results updated successfully.");
+    });
+  })
+}
 
 module.exports = {
   getIqResults,
   getIqResultsById,
   addIqResults,
   deleteIqResults,
+  updateIqResults,
 };
