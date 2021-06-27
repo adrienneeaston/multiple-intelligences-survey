@@ -1,4 +1,3 @@
-// will likely replace with .env file
 const pool = require('../../db');
 const queries = require('./queries');
 
@@ -10,7 +9,8 @@ const getIqResults = (req, res) => {
 };
 
 const getIqResultsById = (req, res) => {
-  const id = parseInt(req.params.iq_results_id);
+  const id = parseInt(req.params.id);
+
   pool.query(queries.getIqResultsById, [id], (error, results) => {
     if (error) throw error;
     res.status(200).json(results.rows);
@@ -19,6 +19,7 @@ const getIqResultsById = (req, res) => {
 
 const addIqResults = (req, res) => {
   const { firstname, lastname } = req.body;
+
   pool.query(queries.checkFirstnameExists, [firstname], (error, results) => { 
     if (results.rows.length) {
       res.send("firstname already exists");    
@@ -32,10 +33,11 @@ const addIqResults = (req, res) => {
 };
 
 const deleteIqResults = (req, res) => {
-  const id = parseInt(req.params.iq_results_id);
+  const id = parseInt(req.params.id);
 
   pool.query(queries.getIqResultsById, [id], (error, results) => {
     const noIqResultsFound = !results.rows.length;
+
     if (noIqResultsFound) {
       res.send("IQ results do not exist in the database.");
     }
@@ -48,7 +50,7 @@ const deleteIqResults = (req, res) => {
 };
 
 const updateIqResults = (req, res) => {
-  const id = parseInt(req.params.iq_results_id);
+  const id = parseInt(req.params.id);
   const { firstname } = req.body;
 
   pool.query(queries.getIqResultsById, [id], (error, results) => {
@@ -58,7 +60,6 @@ const updateIqResults = (req, res) => {
     }
 
     pool.query(queries.updateIqResults, [firstname, id], (error, results) => {
-      console.log(error);
       if (error) throw error;
       res.status(200).send("IQ results updated successfully.");
     });
