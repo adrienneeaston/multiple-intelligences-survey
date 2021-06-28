@@ -44,14 +44,19 @@ A website that leads the user through a quiz assessing their strengths via Howar
 * prompt - are you sure you want to delete current results
 * have test instructions on each page
 
+#### Dependancies
+* express
+* nodemon
+* pg
+
 #### Running the app
-* `live-server`
+* `npm start`
 
 ### Screencaps from website
 #### Main Page
-![Main Page](/public/img/screencap-main.png)
+![Main page](/public/img/screencap-main.png)
 #### Results Page
-![Results Page](/public/img/screencap-results.png)
+![Bar chart of results](/public/img/screencap-results.png)
 #### Descriptions Page
-![Descriptions Page](/public/img/screencap-descriptions.png)
+![Descriptions of different areas of intelligence](/public/img/screencap-descriptions.png)
 
