@@ -46,3 +46,12 @@ A website that leads the user through a quiz assessing their strengths via Howar
 
 #### Running the app
 * `live-server`
+
+### Screencaps from website
+#### Main Page
+![Main Page](/public/img/screencap-main.png)
+#### Results Page
+![Results Page](/public/img/screencap-results.png)
+#### Descriptions Page
+![Descriptions Page](/public/img/screencap-descriptions.png)
+
