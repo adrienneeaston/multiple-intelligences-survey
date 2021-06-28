@@ -43,15 +43,8 @@ A website that leads the user through a quiz assessing their strengths via Howar
 * resize test page so easy to see everything at once
 * prompt - are you sure you want to delete current results
 * have test instructions on each page
-
-#### Dependancies
-* express
-* nodemon
-* pg
-
 #### Running the app
-* `npm start`
-
+* `live-server`
 ### Screencaps from website
 #### Main Page
 ![Main page](/public/img/screencap-main.png)
