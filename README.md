@@ -28,7 +28,7 @@ A website that leads the user through a quiz assessing their strengths via Howar
 * As a test taker I want have access both before and after the test to clear descriptions of the different intelligence types and how this information can be used.
 
 ### Future possible features
-* database storage of user info and results
+* database storage of user info and results (IN PROGESS)
 * option for user to click to hear audio recording of each question
 * connection to more resources and educational materials
 * Progress bar across top
