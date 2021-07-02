@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+</head>
+
+<body>
+  <header>
+    <%- include('../partials/header') %>
+  </header>
+
+  <h1>Hello <%= main %></h1>
+
+  <section>
+    <div id="banner">
+      <ul id="banner-imgs">
+        <li><img src="img/learn1.jpg" alt="colored pencils"></li>
+        <li><img src="img/computers.jpg" alt="several laptops in use"></li>
+        <li><img src="img/learn2.jpg" alt="a stack of books"></li>
+      </ul>
+    </div>
+
+    <section class="left">
+      <h2>About This Test</h2>
+      <p>The goal of this test is to help you identify your areas of strongest intelligence. You will be asked to answer thirty-five questions, only using true and false for each question.</P>
+      <p><a id="btn" href="survey.html">Take Survey Now</a></p>
+      <br>
+
+      <h2>Scholastic Success</h2>
+      <p>Here are just a few example schools that have incorporated the theory of Multiple Intelligences into their daily curriculum:</p>
+      <ul id="schools">
+        <li><a id="art" href="https://lincolnprairie.sd54.org/resources/multiple-intelligences/">Lincoln Prairie</a></li>
+        <li><a href="https://www.newcityschool.org/">New City School</a></li>
+        <li><a href="http://www5.milwaukee.k12.wi.us/school/brown/">Brown Street Academy</a></li>
+      </ul>
+    </section>
+
+    <section class="right">
+      <h2>History of the Test</h2>
+      <p>The theory of multiple intelligences was developed in 1983 by Howard Gardener. Instead of a single Full Scale IQ score that conventional intelligence tests produce which can have a fairly narrow and specific focus, Gardener proposed that there are seven different areas that a person can be intelligent in and everyone is a different balance of these.</p>
+      <p>He has since added two additional areas, Naturalistic and Existential. All nine of these areas can also interact with each other as well, as learning does not occur in isolation. This quiz will only focus on the original seven areas.</p>
+    </section>
+  </section>
+
+  <footer>
+    <%- include('../partials/footer') %>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
