@@ -1,13 +1,12 @@
 const express = require('express');
-// const bodyParser = require('body-parser)');
 const cors = require('cors');
 const path = require('path');
+const controller = require('./src/iq_results/controller');
 
 const iqResultsRoutes = require('./src/iq_results/routes');
 
 const app = express();
 
-// app.use(bodyParser());
 app.use(cors());
 app.use(express.json()); 
 app.use(express.urlencoded());
@@ -27,20 +26,29 @@ app.get('/iqtypes', (req, res) => {
   res.render('./pages/iqtypes', { iqtypes: 'Iqtypes Page' });
 });
 
+// These are all equivelant
+
+// const renderSurvey = (req, res) => {
+//   res.render('./pages/survey', { survey: 'Survey Page' });
+// };
+
+// function renderSurvey(req, res) {
+//   res.render('./pages/survey', { survey: 'Survey Page' });
+// }
+
+// app.get('/survey', (req, res) => {
+//   res.render('./pages/survey', { survey: 'Survey Page' });
+// }); 
+
 app.get('/survey', (req, res) => {
   res.render('./pages/survey', { survey: 'Survey Page' });
 }); 
 
-app.post('/survey', (req, res) => {
-  console.log('hello', req.body);
-  res.send('You rendered a form');
-})
+app.post('/survey', controller.addIqResults);
 
 // app.get('/api/v1/iq_results/:id', (req, res) => {
 //   res.render('index', { firstname : iq_results(req.params.id) });
 // });
-
-app.use(express.json());
 
 app.use('/api/v1/iq_results', iqResultsRoutes);
 
