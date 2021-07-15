@@ -11,6 +11,48 @@
 
   <h1>Hello <%= survey %></h1>
 
+  <section class="intro" id="input"> 
+    <h2>Instructions:</h2>
+
+    <p>This quiz will help you identify your areas of strongest intelligence. Read each statement. If it expresses some characteristic of yours and sounds true for the most part, click on “T” for true. If it doesn’t, choose an “F” for false.</p>
+
+    <form action="" method="post" id="userform">
+      <fieldset>
+        <legend>Please complete the following:</legend>
+        <label for="firstname">First Name *</label>
+        <input id="firstname" name="firstname" type="text" required>
+        <label for="lastname">Last Name *</label>
+        <input id="lastname" name="lastname" type="text" required>
+        <label for="birthdate">Birthdate</label>
+        <input id="birthdate" name="birthdate" type="text">
+        <label for="date">Today's Date</label>
+        <input id="date" name="date" type="text">
+        <button type="submit">Begin your IQ journey!</button>
+      </fieldset>
+    </form>
+  </section>
+
+  <section id="survey-progress">
+    <h2 id="qtitle"></h2>
+    <div id="qaudio"></div>
+  </section>
+
+  <section id="survey-question">
+  </section>
+
+  <section id="survey-answers">
+    <ul class="testanswer" id="testanswer">
+    </ul>
+  </section>
+
+  <section id="survey-results">
+  </section>
+
+  <canvas id="myChart" width="400" height="400"></canvas>
+
+  <section id="survey-explained">
+  </section>
+
   <footer>
     <%- include('../partials/footer') %>
   </footer> 
