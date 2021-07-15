@@ -9,6 +9,8 @@ const app = express();
 
 // app.use(bodyParser());
 app.use(cors());
+app.use(express.json()); 
+app.use(express.urlencoded());
 
 app.use('/', express.static('public'));
 app.set('view engine', 'ejs');
@@ -27,7 +29,12 @@ app.get('/iqtypes', (req, res) => {
 
 app.get('/survey', (req, res) => {
   res.render('./pages/survey', { survey: 'Survey Page' });
-});
+}); 
+
+app.post('/survey', (req, res) => {
+  console.log('hello', req.body);
+  res.send('You rendered a form');
+})
 
 // app.get('/api/v1/iq_results/:id', (req, res) => {
 //   res.render('index', { firstname : iq_results(req.params.id) });
