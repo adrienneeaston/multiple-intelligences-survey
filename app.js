@@ -26,7 +26,7 @@ app.get('/iqtypes', (req, res) => {
   res.render('./pages/iqtypes', { iqtypes: 'Iqtypes Page' });
 });
 
-// These are all equivelant
+// These three are all equivelant
 
 // const renderSurvey = (req, res) => {
 //   res.render('./pages/survey', { survey: 'Survey Page' });
