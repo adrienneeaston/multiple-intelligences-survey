@@ -3,7 +3,7 @@ const cors = require('cors');
 const path = require('path');
 const controller = require('./src/iq_results/controller');
 
-const iqResultsRoutes = require('./src/iq_results/routes');
+// const iqResultsRoutes = require('./src/iq_results/routes');
 
 const app = express();
 
@@ -44,13 +44,18 @@ app.get('/survey', (req, res) => {
   res.render('./pages/survey', { survey: 'Survey Page' });
 }); 
 
+//action routes
+app.get('/', controller.getIqResults);
 app.post('/survey', controller.addIqResults);
+app.get('/:id', controller.getIqResultsById);
+app.put('/:id', controller.updateIqResults);
+app.delete('/:id', controller.deleteIqResults);
 
 // app.get('/api/v1/iq_results/:id', (req, res) => {
 //   res.render('index', { firstname : iq_results(req.params.id) });
 // });
 
-app.use('/api/v1/iq_results', iqResultsRoutes);
+// app.use('/api/v1/iq_results', iqResultsRoutes);
 
 app.listen(3000, () => {
   console.log('App is listening on port 3000')
