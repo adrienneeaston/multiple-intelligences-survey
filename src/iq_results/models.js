@@ -8,11 +8,12 @@
 // };
 
 class User {
-  constructor (firstname, lastname, birthdate, testdate) {
+  constructor (body) {
+    const { firstname, lastname } = body;
     this.firstname = firstname;
     this.lastname = lastname;
-    this.birthdate = birthdate;
-    this.testdate = testdate;
+    this.birthdate = null;
+    this.testdate = null;
   }
 }
 

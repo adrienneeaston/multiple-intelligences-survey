@@ -20,15 +20,13 @@ const getUserById = (req, res) => {
 };
 
 const addUser = (req, res) => {
-  const { firstname, lastname } = req.body;
+  // const { firstname, lastname } = req.body;
+  let user = new models.User(req.body);
 
-  pool.query(queries.checkFirstnameExists, [firstname], (error, results) => { 
+  pool.query(queries.checkFirstnameExists, [user.firstname], (error, results) => { 
     if (results.rows.length) {
       res.send("firstname already exists");    
     }
-
-    let user = new models.User(firstname, lastname, null, null);
-    console.log("!!!!!!", user.firstname, user.lastname);
 
     pool.query(queries.addUser, [user.firstname, user.lastname], (error, results) => {
       if (error) throw error;
