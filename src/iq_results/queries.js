@@ -5,6 +5,8 @@ const addUser = "INSERT INTO users (firstname, lastname) VALUES ($1, $2)";
 const deleteUser = "DELETE FROM users WHERE id = $1";
 const updateUser = "UPDATE users SET firstname = $1 WHERE id = $2";
 
+
+
 module.exports = {
   getUser,
   getUserById,

@@ -1,5 +1,6 @@
 const pool = require('../../db');
 const queries = require('./queries');
+const models = require('./models');
 
 const getUser = (req, res) => {
   pool.query(queries.getUser, (error, results) => {
@@ -26,7 +27,10 @@ const addUser = (req, res) => {
       res.send("firstname already exists");    
     }
 
-    pool.query(queries.addUser, [firstname, lastname], (error, results) => {
+    let user = new models.User(firstname, lastname, null, null);
+    console.log("!!!!!!", user.firstname, user.lastname);
+
+    pool.query(queries.addUser, [user.firstname, user.lastname], (error, results) => {
       if (error) throw error;
       res.status(201).send("Student created successfully.");
     });
