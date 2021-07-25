@@ -36,6 +36,16 @@ let IqType = function (qvalue, category, index, filepath) {
   testQuestions.push(this);
 };
 
+let IqResults = function (linguistCount, logicCount, musicalCount, bodilyCount, spatialCount, interCount, intraCount) {
+  this.linguistCount = linguistCount;
+  this.logicCount = logicCount;
+  this.musicalCount = musicalCount;
+  this.bodilyCount = bodilyCount;
+  this.spatialCount = spatialCount;
+  this.interCount = interCount;
+  this.intraCount = intraCount;
+}
+
 function createQuestionObjects() {
   new IqType('I’d rather draw a map than give someone verbal directions.', 'spatial', '1', 'audio/q1.mp3');
   new IqType('If I am angry or happy, I usually know exactly why.', 'intra', '2', 'audio/q2.mp3');
@@ -304,6 +314,8 @@ function compileTestData() {
   iqArray.push({category: 'Visual-Spatial', count: spatialCount});
   iqArray.push({category: 'Interpersonal', count: interCount});
   iqArray.push({category: 'Intrapersonal', count: intraCount});
+
+  let newResult = new IqResults(linguistCount, logicCount, musicalCount, bodilyCount, spatialCount, interCount, intraCount);
 
   localStorage.setItem('scores', JSON.stringify(iqArray));
 }

@@ -45,11 +45,11 @@ app.get('/survey', (req, res) => {
 }); 
 
 //action routes
-app.get('/', controller.getIqResults);
-app.post('/survey', controller.addIqResults);
-app.get('/:id', controller.getIqResultsById);
-app.put('/:id', controller.updateIqResults);
-app.delete('/:id', controller.deleteIqResults);
+// app.get('/', controller.getUser);
+app.post('/survey', controller.addUser);
+// app.get('/user/:id', controller.getUserById);
+// app.put('/user/:id', controller.updateUser);
+// app.delete('/user/:id', controller.deleteUser);
 
 // app.get('/api/v1/iq_results/:id', (req, res) => {
 //   res.render('index', { firstname : iq_results(req.params.id) });
