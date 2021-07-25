@@ -1,65 +1,68 @@
 const pool = require('../../db');
 const queries = require('./queries');
+const models = require('./models');
 
-const getIqResults = (req, res) => {
-  pool.query(queries.getIqResults, (error, results) => {
+const getUser = (req, res) => {
+  pool.query(queries.getUser, (error, results) => {
     if (error) throw error;
     res.status(200).json(results.rows);
   });
 };
 
-const getIqResultsById = (req, res) => {
+const getUserById = (req, res) => {
   const id = parseInt(req.params.id);
 
-  pool.query(queries.getIqResultsById, [id], (error, results) => {
-    if (error) throw error;
+  pool.query(queries.getUserById, [id], (error, results) => {
+    // if (error) throw error;
+    if (error) throw 'getUserById error';
     res.status(200).json(results.rows);
   });
 };
 
-const addIqResults = (req, res) => {
-  const { firstname, lastname } = req.body;
+const addUser = (req, res) => {
+  // const { firstname, lastname } = req.body;
+  let user = new models.User(req.body);
 
-  pool.query(queries.checkFirstnameExists, [firstname], (error, results) => { 
+  pool.query(queries.checkFirstnameExists, [user.firstname], (error, results) => { 
     if (results.rows.length) {
       res.send("firstname already exists");    
     }
 
-    pool.query(queries.addIqResults, [firstname, lastname], (error, results) => {
+    pool.query(queries.addUser, [user.firstname, user.lastname], (error, results) => {
       if (error) throw error;
       res.status(201).send("Student created successfully.");
     });
   });
 };
 
-const deleteIqResults = (req, res) => {
+const deleteUser = (req, res) => {
   const id = parseInt(req.params.id);
 
-  pool.query(queries.getIqResultsById, [id], (error, results) => {
+  pool.query(queries.getUserById, [id], (error, results) => {
     const noIqResultsFound = !results.rows.length;
 
     if (noIqResultsFound) {
       res.send("IQ results do not exist in the database.");
     }
 
-    pool.query(queries.deleteIqResults, [id], (error, results) => {
+    pool.query(queries.deleteUser, [id], (error, results) => {
       if (error) throw error;
       res.status(200).send("IQ results removed successfully.");
     });
   });
 };
 
-const updateIqResults = (req, res) => {
+const updateUser = (req, res) => {
   const id = parseInt(req.params.id);
   const { firstname } = req.body;
 
-  pool.query(queries.getIqResultsById, [id], (error, results) => {
+  pool.query(queries.getUserById, [id], (error, results) => {
     const noIqResultsFound = !results.rows.length;
     if (noIqResultsFound) {
       res.send("IQ results do not exist in the database.");
     }
 
-    pool.query(queries.updateIqResults, [firstname, id], (error, results) => {
+    pool.query(queries.updateUser, [firstname, id], (error, results) => {
       if (error) throw error;
       res.status(200).send("IQ results updated successfully.");
     });
@@ -67,9 +70,9 @@ const updateIqResults = (req, res) => {
 }
 
 module.exports = {
-  getIqResults,
-  getIqResultsById,
-  addIqResults,
-  deleteIqResults,
-  updateIqResults,
+  getUser,
+  getUserById,
+  addUser,
+  deleteUser,
+  updateUser,
 };
