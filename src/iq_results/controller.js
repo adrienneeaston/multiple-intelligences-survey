@@ -35,6 +35,16 @@ const addUser = (req, res) => {
   });
 };
 
+const addResult = (req, res) => {
+  // const { firstname, lastname } = req.body;
+  let result = new models.Result(req.body);
+
+  pool.query(queries.addResult, [result.linguist, result.logic, result.musical, result.bodily, result.visual, result.inter, result.intra], (error, results) => {
+    if (error) throw error;
+    res.status(201).send("Student created successfully.");
+  });
+};
+
 const deleteUser = (req, res) => {
   const id = parseInt(req.params.id);
 
@@ -75,4 +85,5 @@ module.exports = {
   addUser,
   deleteUser,
   updateUser,
+  addResult,
 };

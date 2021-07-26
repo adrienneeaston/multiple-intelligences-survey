@@ -47,6 +47,7 @@ app.get('/survey', (req, res) => {
 //action routes
 // app.get('/', controller.getUser);
 app.post('/survey', controller.addUser);
+app.post('/survey', controller.addResult);
 // app.get('/user/:id', controller.getUserById);
 // app.put('/user/:id', controller.updateUser);
 // app.delete('/user/:id', controller.deleteUser);

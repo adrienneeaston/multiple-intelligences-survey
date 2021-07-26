@@ -5,7 +5,7 @@ const addUser = "INSERT INTO users (firstname, lastname) VALUES ($1, $2)";
 const deleteUser = "DELETE FROM users WHERE id = $1";
 const updateUser = "UPDATE users SET firstname = $1 WHERE id = $2";
 
-
+const addResult = "INSERT INTO results (linguist, logic, musical, bodily, visual, inter, intra) VALUES ($1, $2, $3, $4, $5, $6, $7)";
 
 module.exports = {
   getUser,
@@ -14,4 +14,5 @@ module.exports = {
   addUser,
   deleteUser,
   updateUser,
+  addResult,
 }
