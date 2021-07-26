@@ -41,7 +41,7 @@ class Result {
     this.logic = logicCount;
     this.musical = musicalCount;
     this.bodily = bodilyCount;
-    this.spatial = spatialCount;
+    this.visual = spatialCount;
     this.inter = interCount;
     this.intra = intraCount;
   }
