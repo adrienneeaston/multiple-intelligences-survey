@@ -9,14 +9,14 @@
     <%- include('../partials/header') %>
   </header>
 
-  <h1>Hello <%= survey %></h1>
+  <h1>Hello <%= user %></h1>
 
   <section class="intro" id="input"> 
     <h2>Instructions:</h2>
 
     <p>This quiz will help you identify your areas of strongest intelligence. Read each statement. If it expresses some characteristic of yours and sounds true for the most part, click on “T” for true. If it doesn’t, choose an “F” for false.</p>
 
-    <form action="/survey" method="post" id="userform">
+    <form action="/user" method="post" id="userform">
       <fieldset>
         <legend>Please complete the following:</legend>
         <label for="firstname">First Name *</label>
@@ -32,32 +32,8 @@
     </form>
   </section>
 
-  <section id="survey-progress">
-    <h2 id="qtitle"></h2>
-    <div id="qaudio"></div>
-  </section>
-
-  <section id="survey-question">
-  </section>
-
-  <section id="survey-answers">
-    <ul class="testanswer" id="testanswer">
-    </ul>
-  </section>
-
-  <section id="survey-results">
-  </section>
-
-  <canvas id="myChart" width="400" height="400"></canvas>
-
-  <section id="survey-explained">
-  </section>
-
   <footer>
     <%- include('../partials/footer') %>
   </footer> 
-
-  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-  <script type="text/javascript" src="/js/test.js"></script>
 </body>
 </html>

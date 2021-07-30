@@ -344,4 +344,7 @@ function renderResults(arr) {
   createReset();
 }
 
-checkLocalStorage();
+// checkLocalStorage();
+
+console.log("Hello World");
+startTest();

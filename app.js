@@ -26,6 +26,10 @@ app.get('/iqtypes', (req, res) => {
   res.render('./pages/iqtypes', { iqtypes: 'Iqtypes Page' });
 });
 
+app.get('/user', (req, res) => {
+  res.render('./pages/user', { user: 'User Page'});
+});
+
 // These three are all equivelant
 
 // const renderSurvey = (req, res) => {
@@ -46,7 +50,7 @@ app.get('/survey', (req, res) => {
 
 //action routes
 // app.get('/', controller.getUser);
-app.post('/survey', controller.addUser);
+app.post('/user', controller.addUser);
 app.post('/survey', controller.addResult);
 // app.get('/user/:id', controller.getUserById);
 // app.put('/user/:id', controller.updateUser);
