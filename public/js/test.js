@@ -37,6 +37,7 @@ let IqType = function (qvalue, category, index, filepath) {
 };
 
 let IqResults = function (linguistCount, logicCount, musicalCount, bodilyCount, spatialCount, interCount, intraCount) {
+  console.log("Hello!!!!)");
   this.linguistCount = linguistCount;
   this.logicCount = logicCount;
   this.musicalCount = musicalCount;
@@ -97,18 +98,18 @@ function startTest() {
   runTest();
 }
 
-function handleForm(event) {
-  console.log(event);
-  event.preventDefault();
-  let firstName = event.target.firstname.value;
-  let lastName = event.target.lastname.value;
-  let birthDate = event.target.birthdate.value;
-  let testDate = event.target.date.value;
-  let newUser = new UserInfo(firstName, lastName, birthDate, testDate);
-  savedUser.push(newUser);
-  localStorage.setItem('user', JSON.stringify(savedUser));
-  startTest();
-}
+// function handleForm(event) {
+//   console.log(event);
+//   event.preventDefault();
+//   let firstName = event.target.firstname.value;
+//   let lastName = event.target.lastname.value;
+//   let birthDate = event.target.birthdate.value;
+//   let testDate = event.target.date.value;
+//   let newUser = new UserInfo(firstName, lastName, birthDate, testDate);
+//   savedUser.push(newUser);
+//   localStorage.setItem('user', JSON.stringify(savedUser));
+//   startTest();
+// }
 
 // page 2 displayed - questions and answer choices
 
@@ -218,18 +219,19 @@ function declareStrengths(label) {
   intelReport.innerHTML = '';
   let headline = document.createElement('h2');
 
-  if(localStorage.getItem('user')) {
-    savedUser = JSON.parse(localStorage.getItem('user'))
-  }
+  // if(localStorage.getItem('user')) {
+  //   savedUser = JSON.parse(localStorage.getItem('user'))
+  // }
 
   if(label === 0) {
     headline.textContent = 'PLEASE RETAKE! All scores zero! You are capable of more than you think!';
     headline.setAttribute("id", "redo");
     intelReport.appendChild(headline);
-  } else {
-    headline.innerHTML = `${savedUser[0].firstName} ${savedUser[0].lastName}, your strongest intelligence is: ${label} Intelligence!`;
-    intelReport.appendChild(headline);
   }
+  // } else {
+  //   headline.innerHTML = `${savedUser[0].firstName} ${savedUser[0].lastName}, your strongest intelligence is: ${label} Intelligence!`;
+  //   intelReport.appendChild(headline);
+  // }
 };
 
 function createChart(arr) {
@@ -292,7 +294,7 @@ function showMeaning() {
   resultElement.appendChild(pEl);
 
   let aEl = document.createElement('a');
-  aEl.setAttribute('href', 'iqtypes.html');
+  aEl.setAttribute('href', '/iqtypes');
   aEl.setAttribute('id', 'button');
   aEl.appendChild(document.createTextNode('See IQ description types here.'));
   resultElement.appendChild(aEl);
@@ -317,23 +319,23 @@ function compileTestData() {
 
   let newResult = new IqResults(linguistCount, logicCount, musicalCount, bodilyCount, spatialCount, interCount, intraCount);
 
-  localStorage.setItem('scores', JSON.stringify(iqArray));
+  // localStorage.setItem('scores', JSON.stringify(iqArray));
 }
 
-function checkLocalStorage() {
-  if(localStorage.getItem('scores') !== null) {
-    hideForm();
-    let iqArray = JSON.parse(localStorage.getItem('scores'));
-    renderResults(iqArray);
-  } else {
-    (userForm.addEventListener('submit', handleForm));
-  }
-}
+// function checkLocalStorage() {
+//   if(localStorage.getItem('scores') !== null) {
+//     hideForm();
+//     let iqArray = JSON.parse(localStorage.getItem('scores'));
+//     renderResults(iqArray);
+//   } else {
+//     (userForm.addEventListener('submit', handleForm));
+//   }
+// }
 
 function showResults() {
   compileTestData();
   hideTest();
-  renderResults(iqArray);
+  renderResults(iqArray); 
 }
 
 function renderResults(arr) {
